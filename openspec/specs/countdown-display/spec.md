@@ -1,4 +1,4 @@
-## ADDED Requirements
+# countdown-display
 
 ### Requirement: Single-page event listing
 

@@ -1,4 +1,4 @@
-## ADDED Requirements
+# timezone-preview
 
 ### Requirement: Per-event timezone preview control
 
