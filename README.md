@@ -1,7 +1,7 @@
 # Event Countdown
 
-Shared, no-auth web page showing a live countdown to the next event (videocall).
-Built for two friends in different timezones (Warsaw and Guarda, Portugal): open the
+Shared, no-auth web page showing a live countdown to the next event (e.g., videocall).
+Built for friends in different timezones: open the
 same URL and each sees the countdown plus event times in their own browser-local
 timezone.
 
@@ -11,7 +11,7 @@ timezone.
   later events as smaller, narrower **compact** bars.
 - Times stored in UTC, displayed in each viewer's local timezone.
 - **IN PROGRESS** linger state for a configurable window after an event starts
-  (default 1 hour); during it the hero also counts down to the next event.
+  (default 1 hour, configurable); during it the hero also counts down to the next event.
 - Add events via a modal (entered in local time, saved as UTC).
 - Delete events with a confirmation prompt.
 - Per-event **timezone preview**: type a city (resolved to IANA) or pick from a
