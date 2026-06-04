@@ -1,7 +1,15 @@
 [project]
 name = "event-countdown"
 version = "0.1.0"
-description = "Add your description here"
+description = "Shared event countdown for videocalls across timezones"
 readme = "README.md"
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.30",
+]
+
+[dependency-groups]
+dev = [
+    "httpx>=0.28.1",
+]

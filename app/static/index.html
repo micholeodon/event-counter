@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Event Countdown</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+  <script>window.LINGER_SECONDS = parseInt("__LINGER_SECONDS__", 10) || 3600;</script>
+</head>
+<body>
+  <header>
+    <h1>Event Countdown</h1>
+    <div class="header-actions">
+      <button id="fmt-btn" title="Toggle 12/24-hour time"></button>
+      <button id="add-btn">+ Add Event</button>
+    </div>
+  </header>
+
+  <main id="bars"></main>
+  <p id="empty" hidden>No events yet.</p>
+
+  <!-- Add Event dialog -->
+  <dialog id="add-dialog">
+    <form id="add-form" method="dialog">
+      <h2>Add Event</h2>
+      <p>
+        <label>Title<br /><input type="text" id="f-title" required maxlength="120" /></label>
+      </p>
+      <p>
+        <label>Date<br /><input type="date" id="f-date" required /></label>
+      </p>
+      <p>
+        <label>Time<br /><input type="time" id="f-time" required /></label>
+      </p>
+      <p class="hint">Entered in your local time.</p>
+      <menu>
+        <button type="button" id="cancel-btn">Cancel</button>
+        <button type="submit" id="save-btn">Add</button>
+      </menu>
+    </form>
+  </dialog>
+
+  <!-- Timezone preview dialog -->
+  <dialog id="tz-dialog">
+    <h2>Preview timezone</h2>
+    <p>
+      <input type="text" id="tz-city" placeholder="City (e.g. Guarda)" />
+      <button type="button" id="tz-go">Show</button>
+    </p>
+    <p><select id="tz-select"></select></p>
+    <p id="tz-result"></p>
+    <menu>
+      <button type="button" id="tz-close">Close</button>
+    </menu>
+  </dialog>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
