@@ -47,7 +47,7 @@ cd ~/apps/event-counter && git pull --ff-only && docker compose up -d --build
 ```
 
 `docker-compose.yml` publishes no host port and keeps the database in the named volume
-`event-data`. Public URL: http://marcin292.mikrus.xyz:20292/events/
+`event-data`. Public URL: https://mchambers.bieda.it/events/
 
 ## Configuration (environment variables)
 
