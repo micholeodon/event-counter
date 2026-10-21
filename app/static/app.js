@@ -32,20 +32,20 @@ let events = []; // {id, title, start_utc, startMs}
 
 // ---- data ----
 async function loadEvents() {
-  const res = await fetch("/api/events");
+  const res = await fetch("api/events");
   const data = await res.json();
   events = data.map((e) => ({ ...e, startMs: Date.parse(e.start_utc) }));
   render();
 }
 
 async function deleteEvent(id) {
-  await fetch(`/api/events/${id}`, { method: "DELETE" });
+  await fetch(`api/events/${id}`, { method: "DELETE" });
   await loadEvents();
 }
 
 async function addEvent(title, startMs) {
   const start_utc = new Date(startMs).toISOString();
-  const res = await fetch("/api/events", {
+  const res = await fetch("api/events", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ title, start_utc }),

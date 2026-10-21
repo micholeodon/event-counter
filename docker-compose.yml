@@ -2,7 +2,16 @@ name: event-counter
 services:
   web:
     build: .
-    ports:
-      - "20292:8000"
     restart: unless-stopped
     container_name: event-counter
+    volumes:
+      - event-data:/data
+    networks:
+      - gateway
+
+volumes:
+  event-data:
+
+networks:
+  gateway:
+    external: true

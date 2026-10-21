@@ -36,6 +36,19 @@ docker run -d -p 8000:8000 -v event_data:/data event-countdown
 
 The named volume `event_data` persists the SQLite database across restarts and rebuilds.
 
+## Deployment (Mikrus)
+
+On the server the app runs behind the shared Caddy gateway (`~/apps/gateway`), which
+owns host port 20292 and proxies `/events/` to this container over the external Docker
+network `gateway`. The frontend uses relative URLs, so it works under that prefix.
+
+```bash
+cd ~/apps/event-counter && git pull --ff-only && docker compose up -d --build
+```
+
+`docker-compose.yml` publishes no host port and keeps the database in the named volume
+`event-data`. Public URL: http://marcin292.mikrus.xyz:20292/events/
+
 ## Configuration (environment variables)
 
 | Variable         | Default            | Description                                   |
